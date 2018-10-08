@@ -10,6 +10,7 @@ def home(request):
 
 def board_topics(request, pk):
     board = get_object_or_404(Board, pk=pk)
+    topics = board.topics.all()
     return render(request, 'topics.html', {'board': board})
 
 def new_topic(request, pk):
